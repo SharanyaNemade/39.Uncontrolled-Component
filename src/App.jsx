@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Skills from "./CheckBoxes";
+import Radio_DropDown from "./Radio_DropDown";
 
 
 
@@ -8,8 +8,7 @@ function App() {
 
   return (
     <div>
-      <h1>Handle Check Boxes in React Js</h1>
-      <Skills />
+      <Radio_DropDown />
     </div>
   );
 }
