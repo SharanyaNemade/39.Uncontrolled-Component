@@ -1,19 +1,25 @@
 import { useState } from "react";
 import "./App.css";
-import Counter from "./Counter";
+import LifeCycle from "./LifeCycle";
 
 function App() {
 
-  const [count, setCount] = useState(0);
-  const [data, setdata] = useState(0);
+  const[count,setCount] = useState(0);
+  const[data,setData] = useState(0);
+  const[display,setDisplay] = useState(true);
 
   return (
     <div>
-      <Counter count = {count} data = {data} />
       
-      <button onClick={() => setCount(count+1)}>Counter {count}</button>
-
-      <button onClick={() => setdata(data+1)}>Data {data}</button>
+      {
+        display? <LifeCycle count={count} data={data} ></LifeCycle>: null
+      }
+      
+      <button onClick={() => setCount(count+1)}>Increment</button>
+      <button onClick={() => setData(data+1)}>Data</button>
+      <button onClick={() => setDisplay(!display)}>Toggle</button>
+      
+      
     </div>
   );
 }

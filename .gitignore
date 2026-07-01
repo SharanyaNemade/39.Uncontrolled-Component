@@ -25,9 +25,12 @@ dist-ssr
 
 
 # React component files
-Radio_DropDown.jsx
-CheckBoxes.jsx
-ReuseComponent.jsx
-User.jsx
-Student.jsx
-College.jsx
+
+assets/
+src/Radio_DropDown.jsx
+src/CheckBoxes.jsx
+src/ReuseComponent.jsx
+src/User.jsx
+src/Student.jsx
+src/College.jsx
+src/Counter.jsx
