@@ -1,27 +1,49 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
-import LifeCycle from "./LifeCycle";
+
 
 function App() {
 
-  const[count,setCount] = useState(0);
-  const[data,setData] = useState(0);
-  const[display,setDisplay] = useState(true);
+  const inputRef = useRef(null);
+  const h1Ref = useRef(null);
+
+
+
+  const inputHandler = () => {
+    console.log(inputRef);
+    inputRef.current.focus();
+    inputRef.current.style.color = 'red'
+    inputRef.current.placeholder = "Enter Password"
+    inputRef.current.value = "123"
+  }
+
+  const toggleHandler = () => {
+    
+    if(inputRef.current.style.display != 'none'){
+      inputRef.current.style.display = 'none'
+    }
+    else{
+      inputRef.current.style.display = 'inline'
+    }
+  }
+
+    const h1Handler = () => {
+      h1Ref.current.style.color = 'green'
+    }
+  
 
   return (
     <div>
-      
-      {
-        display? <LifeCycle count={count} data={data} ></LifeCycle>: null
-      }
-      
-      <button onClick={() => setCount(count+1)}>Increment</button>
-      <button onClick={() => setData(data+1)}>Data</button>
-      <button onClick={() => setDisplay(!display)}>Toggle</button>
-      
-      
+      <h1>useRef</h1>
+      <button onClick={toggleHandler}>Toggle</button>
+
+      <input ref={inputRef} type="text" placeholder="Enter Username" />
+      <button onClick={inputHandler}>Focus on Input React</button>
+
+      <h1 ref={h1Ref}>Code Step By Step</h1>
+      <button onClick={h1Handler}>Handler</button>
     </div>
-  );
+  )
 }
 
 export default App;
